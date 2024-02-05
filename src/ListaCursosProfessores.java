@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ListaCursosProfessores {
     /*------------------ FUNCÕES ------------------*/
 
     //Função para listar os cursos
-    public static void listarCursos(ArrayList<String> listaCurso) {
+    public static void listarCursos(List<String> listaCurso) {
         if (listaCurso.isEmpty()) {
             System.out.println("A lista de cursos está vazia.");
         } else {
@@ -16,7 +17,7 @@ public class ListaCursosProfessores {
     }
 
     //Função para listar os professores
-    public static void listarProf(ArrayList<String> listaProf) {
+    public static void listarProf(List<String> listaProf) {
         if (listaProf.isEmpty()) {
             System.out.println("A lista de professores está vazia.");
         } else {
@@ -27,7 +28,7 @@ public class ListaCursosProfessores {
     }
 
     //Função para escolher listar ou cursos ou professores
-    public static void escolhaListar(Scanner entrada, ArrayList<String> listaCurso, ArrayList<String> listaProf) {
+    public static void escolhaListar(Scanner entrada, List<String> listaCurso, List<String> listaProf) {
         System.out.println("+----------- LISTAR -------------+");
         System.out.println("|   1 - Cursos                   |");
         System.out.println("|   2 - Professores              |");
@@ -52,21 +53,21 @@ public class ListaCursosProfessores {
     }
 
     //Função para adicionar um curso
-    public static void addCurso(Scanner entrada, ArrayList<String> listaCurso) {
+    public static void addCurso(Scanner entrada, List<String> listaCurso) {
         System.out.print("Informe o nome do curso: ");
         String curso = entrada.next();
         listaCurso.add(curso);
     }
 
     //Função para adicionar um professor
-    public static void addProf(Scanner entrada, ArrayList<String> listaProf) {
+    public static void addProf(Scanner entrada, List<String> listaProf) {
         System.out.print("Informe o nome do professor: ");
         String prof = entrada.next();
         listaProf.add(prof);
     }
 
     //Função para adicionar ou um curso ou um professor
-    public static void escolhaAdd(Scanner entrada, ArrayList<String> listaCurso, ArrayList<String> listaProf) {
+    public static void escolhaAdd(Scanner entrada, List<String> listaCurso, List<String> listaProf) {
         System.out.println("+---------- ADICIONAR -----------+");
         System.out.println("|   1 - Curso                    |");
         System.out.println("|   2 - Professor                |");
@@ -101,18 +102,18 @@ public class ListaCursosProfessores {
     }
 
     //Função para remover o índice selecionado de cursos
-    public static void removerCurso(Scanner entrada, ArrayList<String> listaCurso) {
+    public static void removerCurso(Scanner entrada, List<String> listaCurso) {
         System.out.print("Informe o índice do curso: ");
         listaCurso.remove(listarPedirIndiceCurso(entrada));
     }
 
     //Função para remover o índice de professores
-    public static void removerProf(Scanner entrada, ArrayList<String> listaProf) {
+    public static void removerProf(Scanner entrada, List<String> listaProf) {
         System.out.print("Informe o índice do professor: ");
         listaProf.remove(listarPedirIndiceProf(entrada));
     }
 
-    public static void menuRemover(Scanner entrada, ArrayList<String> listaCurso, ArrayList<String> listaProf) {
+    public static void menuRemover(Scanner entrada, List<String> listaCurso, List<String> listaProf) {
         System.out.println("+----------- REMOVER ------------+");
         System.out.println("|   1 - Curso                    |");
         System.out.println("|   2 - Professor                |");
@@ -143,8 +144,8 @@ public class ListaCursosProfessores {
 
         System.out.println("Bem vindo a lista de Cursos e Professores");
 
-        ArrayList<String> listaCurso = new ArrayList<>();
-        ArrayList<String> listaProf = new ArrayList<>();
+        List<String> listaCurso = new ArrayList<>();
+        List<String> listaProf = new ArrayList<>();
 
         do {
             System.out.println("+------------- MENU -------------+");
